@@ -17,7 +17,6 @@ feriado_parser
 excecoes
 ).each {|req| require File.dirname(__FILE__) + "/brdata/#{req}"}
 
-
 module BrData
 end
 old_verbose = $VERBOSE
@@ -39,7 +38,7 @@ file = -> {
         else
           String.new
         end	
-      }
+    }
 FERIADOS_PATH ||=  file.call
 if File.directory?(FERIADOS_PATH)
   f, m = FeriadoParser.parser(FERIADOS_PATH)
